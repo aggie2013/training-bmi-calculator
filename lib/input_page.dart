@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
-
-const double bottomContainerHeight = 80;
-const bottomContainerColor = Color(0xFFEB1555);
-const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF111328);
+import 'const.dart';
 
 enum Gender {male, female, notSelected}
 
@@ -31,7 +27,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
+                    color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
                     cardChild: SexIconAndText(
                       icon: FontAwesomeIcons.mars, 
                       label: 'MALE',
@@ -45,7 +41,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
+                    color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
                     cardChild: SexIconAndText(
                       icon: FontAwesomeIcons.venus, 
                       label: 'FEMALE',
@@ -61,25 +57,25 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: ReusableCard(color: activeCardColor)
+            child: ReusableCard(color: kActiveCardColor)
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(color: activeCardColor)
+                  child: ReusableCard(color: kActiveCardColor)
                 ),
                 Expanded(
-                  child: ReusableCard(color: activeCardColor)
+                  child: ReusableCard(color: kActiveCardColor)
                 ),
               ],
             ),
           ),
           Container (
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top:10),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
