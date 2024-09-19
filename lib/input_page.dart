@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const double bottomContainerHeight = 80;
+const reusableCardColor = Color(0xFF1D1E33);
+const bottomContainerColor = Color(0xFFEB1555);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -18,28 +22,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colorToShow: Color(0xFF1D1E33)),
+                  child: ReusableCard(color: reusableCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(colorToShow: Color(0xFF1D1E33))
+                  child: ReusableCard(color: reusableCardColor)
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(colorToShow: Color(0xFF1D1E33))
+            child: ReusableCard(color: reusableCardColor)
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colorToShow: Color(0xFF1D1E33))
+                  child: ReusableCard(color: reusableCardColor)
                 ),
                 Expanded(
-                  child: ReusableCard(colorToShow: Color(0xFF1D1E33))
+                  child: ReusableCard(color: reusableCardColor)
                 ),
               ],
             ),
+          ),
+          Container (
+            color: bottomContainerColor,
+            margin: EdgeInsets.only(top:10),
+            width: double.infinity,
+            height: bottomContainerHeight,
           ),
         ],
       ),
@@ -48,16 +58,16 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  final Color colorToShow;
+  final Color color;
 
-  ReusableCard({required this.colorToShow});
+  ReusableCard({required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: colorToShow,
+        color: color,
         borderRadius: BorderRadius.circular(10), 
       ),
     );
