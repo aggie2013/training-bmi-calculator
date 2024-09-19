@@ -30,35 +30,31 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
+                  child: ReusableCard(
+                    color: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
+                    cardChild: SexIconAndText(
+                      icon: FontAwesomeIcons.mars, 
+                      label: 'MALE',
+                      ),
+                    onPress: (){
+                      setState((){
                         selectedGender = Gender.male;
-                      }); 
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
-                      cardChild: SexIconAndText(
-                        icon: FontAwesomeIcons.mars, 
-                        label: 'MALE',
-                        ),
-                    ),
+                      });
+                    }
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    color: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
+                    cardChild: SexIconAndText(
+                      icon: FontAwesomeIcons.venus, 
+                      label: 'FEMALE',
+                      ),
+                    onPress: (){
                       setState((){
                         selectedGender = Gender.female;
                       });
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
-                      cardChild: SexIconAndText(
-                        icon: FontAwesomeIcons.venus, 
-                        label: 'FEMALE',
-                        ),
-                    ),
+                    }
                   ),
                 ),
               ],
