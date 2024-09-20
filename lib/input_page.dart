@@ -21,6 +21,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -32,7 +33,7 @@ class _InputPageState extends State<InputPage> {
                       icon: FontAwesomeIcons.mars, 
                       label: 'MALE',
                       ),
-                    onPress: (){
+                    onPress: () => (){
                       setState((){
                         selectedGender = Gender.male;
                       });
@@ -46,7 +47,7 @@ class _InputPageState extends State<InputPage> {
                       icon: FontAwesomeIcons.venus, 
                       label: 'FEMALE',
                       ),
-                    onPress: (){
+                    onPress: () => (){
                       setState((){
                         selectedGender = Gender.female;
                       });
@@ -57,16 +58,49 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: ReusableCard(color: kActiveCardColor)
+            child: ReusableCard(
+              color: kActiveCardColor,
+              cardChild: Column(
+                children: [
+                  Text(
+                    'HEIGHT',
+                    style: kLabelTextStyle,
+                  ),
+                ],
+              ),
+              onPress: (){},
+            ),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor)
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    cardChild: Column(
+                      children: [
+                        Text(
+                          'BOTTOM1',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                  onPress: (){},
+                  )
                 ),
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor)
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    cardChild: Column(
+                      children: [
+                        Text(
+                          'BOTTOM2',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                  onPress: (){},
+                  )
                 ),
               ],
             ),
