@@ -28,7 +28,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
+                    color: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
                     cardChild: SexIconAndText(
                       icon: FontAwesomeIcons.mars, 
                       label: 'MALE',
@@ -42,7 +42,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
+                    color: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
                     cardChild: SexIconAndText(
                       icon: FontAwesomeIcons.venus, 
                       label: 'FEMALE',
@@ -59,12 +59,12 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              color: kActiveCardColor,
+              color: activeCardColor,
               cardChild: Column(
                 children: [
                   Text(
                     'HEIGHT',
-                    style: kLabelTextStyle,
+                    style: labelTextStyle,
                   ),
                 ],
               ),
@@ -76,12 +76,12 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: kActiveCardColor,
+                    color: activeCardColor,
                     cardChild: Column(
                       children: [
                         Text(
                           'BOTTOM1',
-                          style: kLabelTextStyle,
+                          style: labelTextStyle,
                         ),
                       ],
                     ),
@@ -90,12 +90,12 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: kActiveCardColor,
+                    color: activeCardColor,
                     cardChild: Column(
                       children: [
                         Text(
                           'BOTTOM2',
-                          style: kLabelTextStyle,
+                          style: labelTextStyle,
                         ),
                       ],
                     ),
@@ -109,7 +109,7 @@ class _InputPageState extends State<InputPage> {
             color: kBottomContainerColor,
             margin: EdgeInsets.only(top:10),
             width: double.infinity,
-            height: kBottomContainerHeight,
+            height: bottomContainerHeight,
           ),
         ],
       ),

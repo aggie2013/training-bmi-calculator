@@ -14,7 +14,7 @@ class SexIconAndText extends StatelessWidget {
       children: [
         Icon(icon, size: 80),
         SizedBox(height:15),
-        Text(label, style: kLabelTextStyle),
+        Text(label, style: labelTextStyle),
       ],
     );
   }
