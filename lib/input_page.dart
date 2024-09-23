@@ -199,6 +199,13 @@ class _InputPageState extends State<InputPage> {
             margin: EdgeInsets.only(top: 10),
             width: double.infinity,
             height: bottomContainerHeight,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/result');
+              },
+              child: Center(
+                  child: Text('CALCULATE', style: calculateButtonTextStyle)),
+            ),
           ),
         ],
       ),
